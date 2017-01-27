@@ -45,7 +45,7 @@ class Json:
 			try:
 				self.rows_list.append(store_list[:level]+[data])
 			except:
-				print("Unexpected error:", sys.exc_info()[0])
+				print("Error occured at:", data)
 
 	def convert_to_csv(self, filename = "jsonto.csv", delimiter = ","):
 		self.recursive_json(self.json_data)
@@ -55,4 +55,4 @@ class Json:
 				try:
 					spamwriter.writerow(row)
 				except:
-					print("Unexpected error:", sys.exc_info()[0])
+					print("Error occured at:", row)
